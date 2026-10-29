@@ -1,0 +1,31 @@
+Resultado de las pruebas unitarias (JUnit 5) - SIGRE Servlets y JSP
+Ejecutadas el 29/10/2026 con Java 17 (equivale a: mvn test)
+
+EventoServicioTest
+  [OK] programaEventoValido()
+  [OK] rechazaFechaPasadaYCodigoRepetido()
+  [OK] rechazaCupoMayorAlAforoPermitido()
+
+InscripcionServicioTest
+  [OK] rechazaDocumentoInexistenteOInvalido()
+  [OK] rechazaEventoNoProgramado()
+  [OK] rechazaAsistenteSinArlVigente()
+  [OK] rechazaEventoSinCupos()
+  [OK] rechazaInscripcionDuplicada()
+  [OK] inscribeAsistenteConArlVigenteYDescuentaCupo()
+
+ValidadorTest
+  [OK] conversionesDevuelvenNullConDatosInvalidos()
+  [OK] validaDocumentoNumerico()
+  [OK] rechazaFechaFinAnteriorAlInicio()
+  [OK] aceptaCodigoDeCursoConFormatoCorrecto()
+  [OK] rechazaCodigoDeCursoConFormatoIncorrecto()
+  [OK] validaRangoDeEnteros()
+  [OK] exigeCamposObligatorios()
+
+[        16 tests found           ]
+[         0 tests skipped         ]
+[        16 tests started         ]
+[         0 tests aborted         ]
+[        16 tests successful      ]
+[         0 tests failed          ]
