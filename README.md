@@ -10,14 +10,14 @@ Módulo web del Sistema de Gestión de Registro para Eventos (SIGRE) construido 
 - Programar eventos en las pistas de entrenamiento con control de aforo (máximo 30 personas).
 - Inscribir asistentes validando que estén registrados, tengan ARL vigente y no estén inscritos dos veces; cada inscripción descuenta un cupo y genera un código de acceso.
 
-## Cumplimiento de la lista de chequeo (IE-GA7-220501096-AA2-EV02)
+## Requisitos de la evidencia
 
 | Indicador | Dónde está en el código |
 |---|---|
-| **1. Formularios HTML con servlets (30 %)** | `cursos/formulario.jsp` → `CursoServlet`; `eventos/formulario.jsp` → `EventoServlet`; `inscripciones/formulario.jsp` → `InscripcionServlet`; formulario HTML estático `consulta-eventos.html` → `EventoServlet`. Los servlets usan `@WebServlet` y extienden `HttpServlet`. |
-| **2. Métodos GET y POST (30 %)** | **GET** (`doGet`) para consultas con parámetros en la URL: `cursos?accion=listar&q=REC`, `eventos?estado=PROGRAMADO&idCurso=1`, `inscripciones?idEvento=2`. **POST** (`doPost`) para todo lo que modifica datos: registrar/editar/eliminar cursos, programar eventos e inscribir asistentes. Después de cada POST se aplica el patrón Post/Redirect/Get. |
-| **3. Elementos de JSP (30 %)** | Directivas `<%@ page %>` e `<%@ include %>` (fragmentos `encabezado.jspf` y `pie.jspf`); declaraciones `<%! %>` (métodos `esc()` y `fecha()`); scriptlets `<% %>` (ciclos y condiciones); expresiones `<%= %>`; acción estándar `<jsp:useBean>` (index.jsp); expresiones EL `${pageContext.request.contextPath}`; objetos implícitos `request`, `session` y `exception`; página de error con `isErrorPage="true"`. |
-| **4. Herramienta de versionamiento (10 %)** | Proyecto versionado con Git y publicado en GitHub (ver `ENLACE_REPOSITORIO.txt`). |
+| **1. Formularios HTML con servlets** | `cursos/formulario.jsp` → `CursoServlet`; `eventos/formulario.jsp` → `EventoServlet`; `inscripciones/formulario.jsp` → `InscripcionServlet`; formulario HTML estático `consulta-eventos.html` → `EventoServlet`. Los servlets usan `@WebServlet` y extienden `HttpServlet`. |
+| **2. Métodos GET y POST** | **GET** (`doGet`) para consultas con parámetros en la URL: `cursos?accion=listar&q=REC`, `eventos?estado=PROGRAMADO&idCurso=1`, `inscripciones?idEvento=2`. **POST** (`doPost`) para todo lo que modifica datos: registrar/editar/eliminar cursos, programar eventos e inscribir asistentes. Después de cada POST se aplica el patrón Post/Redirect/Get. |
+| **3. Elementos de JSP** | Directivas `<%@ page %>` e `<%@ include %>` (fragmentos `encabezado.jspf` y `pie.jspf`); declaraciones `<%! %>` (métodos `esc()` y `fecha()`); scriptlets `<% %>` (ciclos y condiciones); expresiones `<%= %>`; acción estándar `<jsp:useBean>` (index.jsp); expresiones EL `${pageContext.request.contextPath}`; objetos implícitos `request`, `session` y `exception`; página de error con `isErrorPage="true"`. |
+| **4. Herramienta de versionamiento** | Proyecto versionado con Git y publicado en GitHub (ver `ENLACE_REPOSITORIO.txt`). |
 
 ## Tecnologías
 
