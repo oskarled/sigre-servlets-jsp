@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consulta de eventos - SIGRE</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="barra">
+    <div class="marca">SIGRE <span>E.C.M. Training Center</span></div>
+    <nav>
+        <a href="index.jsp">Inicio</a>
+        <a href="cursos">Cursos</a>
+        <a href="eventos">Eventos</a>
+        <a href="consulta-eventos.html">Consulta rápida</a>
+    </nav>
+</header>
+<main class="contenido">
+    <section class="tarjeta">
+        <h1>Consulta rápida de eventos</h1>
+        <p>Formulario HTML estático. Usa el método <strong>GET</strong>: los filtros viajan en la URL
+           (por ejemplo <code>eventos?estado=PROGRAMADO</code>) y los recibe el servlet <code>EventoServlet</code>.</p>
+        <form action="eventos" method="get" class="formulario">
+            <label for="estado">Estado del evento</label>
+            <select id="estado" name="estado">
+                <option value="">Todos</option>
+                <option value="PROGRAMADO">Programado</option>
+                <option value="EN_CURSO">En curso</option>
+                <option value="FINALIZADO">Finalizado</option>
+                <option value="CANCELADO">Cancelado</option>
+            </select>
+            <label for="idCurso">Id del curso (opcional)</label>
+            <input type="number" id="idCurso" name="idCurso" min="1" placeholder="Ejemplo: 1">
+            <button type="submit">Consultar</button>
+        </form>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<%-- Fragmento incluido de forma estática con la directiva include en todas las páginas --%>
+<%@ page import="java.time.LocalDateTime, java.time.format.DateTimeFormatter, java.util.List" %>
+<%!
+    // Declaraciones JSP: métodos disponibles en la página que incluye este fragmento.
+    private static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+    /** Escapa caracteres especiales para mostrar texto del usuario sin riesgo de XSS. */
+    private String esc(Object valor) {
+        if (valor == null) {
+            return "";
+        }
+        return valor.toString().replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                .replace("\"", "&quot;").replace("'", "&#39;");
+    }
+
+    private String fecha(LocalDateTime valor) {
+        return valor == null ? "" : valor.format(FORMATO_FECHA);
+    }
+%>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIGRE - E.C.M. Training Center</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
+</head>
+<body>
+<header class="barra">
+    <div class="marca">SIGRE <span>E.C.M. Training Center</span></div>
+    <nav>
+        <a href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+        <a href="${pageContext.request.contextPath}/cursos">Cursos</a>
+        <a href="${pageContext.request.contextPath}/eventos">Eventos</a>
+        <a href="${pageContext.request.contextPath}/consulta-eventos.html">Consulta rápida</a>
+    </nav>
+</header>
+<main class="contenido">
+<%
+    // Scriptlet: mensajes de resultado y de error que envían los servlets.
+    Object mensajeExito = request.getAttribute("mensajeExito");
+    List<?> errores = (List<?>) request.getAttribute("errores");
+    if (mensajeExito != null) {
+%>
+    <div class="alerta exito"><%= esc(mensajeExito) %></div>
+<%
+    }
+    if (errores != null && !errores.isEmpty()) {
+%>
+    <div class="alerta error">
+        <strong>Revise los siguientes datos:</strong>
+        <ul>
+        <% for (Object error : errores) { %>
+            <li><%= esc(error) %></li>
+        <% } %>
+        </ul>
+    </div>
+<%
+    }
+%>

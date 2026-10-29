@@ -1,0 +1,62 @@
+/* Hoja de estilos del módulo SIGRE (Servlets y JSP) */
+:root {
+    --azul: #0b3d66;
+    --azul-claro: #e8f0f7;
+    --naranja: #e8710a;
+    --texto: #1f2933;
+    --gris: #6b7785;
+    --borde: #d5dde5;
+    --exito: #1e7b3c;
+    --error: #b3261e;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Roboto, Arial, sans-serif; color: var(--texto); background: #f5f7fa; }
+.barra { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+         padding: 14px 24px; background: var(--azul); color: #fff; }
+.marca { font-size: 1.3rem; font-weight: 700; }
+.marca span { font-weight: 400; font-size: .9rem; opacity: .8; margin-left: 6px; }
+.barra nav a { color: #fff; text-decoration: none; margin-left: 18px; font-weight: 500; }
+.barra nav a:hover { color: #ffd2a8; }
+.contenido { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+.tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+h1 { font-size: 1.45rem; margin: 0 0 12px; color: var(--azul); }
+h2 { font-size: 1.15rem; margin: 0 0 12px; color: var(--azul); }
+.titulo-seccion { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.boton, button { background: var(--naranja); color: #fff; border: none; border-radius: 6px; padding: 9px 16px;
+                 font-size: .95rem; cursor: pointer; text-decoration: none; display: inline-block; }
+.boton:hover, button:hover { background: #c75f06; }
+.secundario { color: var(--gris); margin-left: 12px; }
+.busqueda { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+.busqueda input, .busqueda select { padding: 8px 10px; border: 1px solid var(--borde); border-radius: 6px; min-width: 220px; }
+.formulario { display: flex; flex-direction: column; gap: 6px; max-width: 820px; }
+.formulario label { font-weight: 600; font-size: .9rem; margin-top: 8px; }
+.formulario input, .formulario select { padding: 9px 10px; border: 1px solid var(--borde); border-radius: 6px; font-size: .95rem; width: 100%; }
+.fila { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.botones { margin-top: 16px; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th { background: var(--azul-claro); text-align: left; padding: 9px; color: var(--azul); }
+td { padding: 9px; border-bottom: 1px solid var(--borde); vertical-align: middle; }
+.acciones { display: flex; gap: 12px; align-items: center; }
+.acciones form { margin: 0; }
+.enlace-peligro { background: none; color: var(--error); padding: 0; font-size: .92rem; }
+.enlace-peligro:hover { background: none; text-decoration: underline; }
+.vacio { color: var(--gris); text-align: center; padding: 16px; }
+.nota { color: var(--gris); font-size: .88rem; }
+.alerta { padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; }
+.alerta ul { margin: 6px 0 0; padding-left: 20px; }
+.exito { background: #e6f4ea; color: var(--exito); border: 1px solid #b7dfc2; }
+.error { background: #fdecea; color: var(--error); border: 1px solid #f5c2bd; }
+.estado { padding: 2px 8px; border-radius: 10px; font-size: .78rem; font-weight: 600; background: #eee; }
+.estado.programado { background: #e3effc; color: #0b5cad; }
+.estado.en_curso { background: #fff4e0; color: #a35a00; }
+.estado.finalizado { background: #e6f4ea; color: var(--exito); }
+.estado.cancelado { background: #fdecea; color: var(--error); }
+.detalle { display: grid; grid-template-columns: 180px 1fr; gap: 6px 16px; margin: 0; }
+.detalle dt { font-weight: 600; color: var(--gris); }
+.detalle dd { margin: 0; }
+.accesos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 18px 0; }
+.acceso { border: 1px solid var(--borde); border-radius: 8px; padding: 16px; text-decoration: none; color: var(--texto); background: var(--azul-claro); }
+.acceso strong { display: block; color: var(--azul); margin-bottom: 4px; }
+.acceso span { font-size: .88rem; color: var(--gris); }
+.pie { text-align: center; color: var(--gris); font-size: .8rem; padding: 20px; }
+code { background: #f0f2f5; padding: 1px 5px; border-radius: 4px; }
